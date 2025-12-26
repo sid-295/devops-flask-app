@@ -102,24 +102,16 @@ A Jenkins pipeline automates the following tasks:
 
 ## 🔄 CI/CD Pipeline Flow
 
-Developer pushes code to GitHub
-          ↓
-Jenkins Pipeline is triggered
-          ↓
-Jenkins pulls latest code from GitHub
-          ↓
-Docker image is built for the Python application
-          ↓
-Jenkins authenticates securely with Amazon ECR
-          ↓
-Docker image is tagged using Jenkins build number
-          ↓
-Docker image is pushed to Amazon ECR
-          ↓
-Jenkins updates the Kubernetes deployment with the new image
-          ↓
-Kubernetes performs a rolling update on AWS EKS
-          ↓
-Application is exposed to users via Kubernetes LoadBalancer
+1. Developer pushes code to GitHub  
+2. Jenkins Pipeline is triggered  
+3. Jenkins pulls the latest code from GitHub  
+4. Docker image is built for the Python application  
+5. Jenkins authenticates securely with Amazon ECR  
+6. Docker image is tagged using the Jenkins build number  
+7. Docker image is pushed to Amazon ECR  
+8. Jenkins updates the Kubernetes deployment with the new image  
+9. Kubernetes performs a rolling update on AWS EKS  
+10. Application is exposed to users via a Kubernetes LoadBalancer
+
 
 ---
